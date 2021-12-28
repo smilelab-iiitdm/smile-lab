@@ -27,6 +27,7 @@ const ugRouter= require("./routes/undergraduates");
 const mastersRouter = require("./routes/masters");
 const internsRouter = require("./routes/interns");
 const phdRouter = require("./routes/phds");
+const usersRouter = require("./routes/users");
 
 app.use('/publications',publicationsRouter);
 app.use('/professors',professorsRouter);
@@ -34,6 +35,7 @@ app.use('/undergraduates',ugRouter);
 app.use('/masters',mastersRouter);
 app.use('/interns',internsRouter);
 app.use('/phds',phdRouter);
+app.use('/users',usersRouter);
 
 app.listen(port,()=>{
     console.log('Successful running on : %d' ,port);

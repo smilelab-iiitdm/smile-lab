@@ -41,12 +41,6 @@ return (
                     {member.email}
                   </p>
                 </div>
-                <div>
-                  <p className="mb-0">
-                    <i className="fas fa-envelope-open-text pr-3"></i>
-                    {member.email2}
-                  </p>
-                </div>
               </div>
             </div>
             <div>

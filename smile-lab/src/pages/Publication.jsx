@@ -13,6 +13,8 @@ import {link} from "react-router-dom";
         publications: [],
         DataisLoaded: false
       };
+
+      
     }
 
     componentDidMount() {

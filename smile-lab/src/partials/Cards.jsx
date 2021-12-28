@@ -1,5 +1,6 @@
 import React,{ useState } from "react";
 import ReactLoader from "../partials/Loading";
+import Title from "../partials/Title";
 
 function CardInfo({content}) {
 

@@ -13,7 +13,6 @@ router.route('/add').post((req,res) =>{
     const desc = req.body.desc;
     const researchInterest = req.body.researchInterest;
     const education = req.body.education;
-    const email2 = req.body.email2;
     const email = req.body.email;
    
     const addIntern = new interns({
@@ -22,8 +21,7 @@ router.route('/add').post((req,res) =>{
         desc,
         researchInterest,
         education,
-        email,
-        email2
+        email
     });
 
     addIntern.save()

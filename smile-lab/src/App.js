@@ -12,6 +12,7 @@ import Cultural from "./pages/Cultural";
 import MasMember from "./pages/masmember";
 import Bachelor from "./pages/bachelors";
 import Intern from "./pages/interns";
+import addPubs from "./pages/Addpublication";
 import "./styles/style.css";
 
 const App = () => {
@@ -30,6 +31,7 @@ const App = () => {
           <Route path="/masters" exact component={MasMember} />
           <Route path="/bachelors" exact component={Bachelor} />
           <Route path="/interns" exact component={Intern} />
+          <Route path="/addpub" exact component={addPubs} />
         </Switch>
         <Footer />
       </BrowserRouter>

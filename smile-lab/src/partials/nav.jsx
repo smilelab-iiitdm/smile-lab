@@ -46,9 +46,8 @@ return (
             <a class="navbar-brand" href="/"> 
                 <img src={Logo} alt="" height="100px" />
             </a>
-            <a href="\">
-            <button class="btn btn-outline-primary my-2 my-sm-0">login</button>
-            </a>
+            <a href="\"></a>
+            <button class="btn btn-primary my-2 my-sm-0">login</button>
         </div>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -66,7 +65,7 @@ return (
            {link.drop.length === 0 ?
             
             <li class="nav-item" >
-            <a class="nav-link" href={link.to}>{link.name}</a>
+            <a class="nav-link"  href={link.to}>{link.name}</a>
         </li>
         :
         <li class="nav-item dropdown">

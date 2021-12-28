@@ -29,10 +29,6 @@ const mastersSchema = new Schema(
             type: String,
             trim: true
         },
-        email2:{
-            type: String,
-            trim: true
-        },
     },
     {
         timestamps : true,
