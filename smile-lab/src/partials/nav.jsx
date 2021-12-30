@@ -46,8 +46,8 @@ return (
             <a class="navbar-brand" href="/"> 
                 <img src={Logo} alt="" height="100px" />
             </a>
-            <a href="\"></a>
-            <button class="btn btn-primary my-2 my-sm-0">login</button>
+            <a href="/login">
+            <button class="btn btn-primary my-2 my-sm-0">login</button></a>
         </div>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

@@ -14,7 +14,7 @@ return (
         members.map((member, index) => (
           <div key={index + 1}>
             <div className="row">
-              <div className="col-sm-3">
+              <div className="col-sm-2">
                 <img
                   src={"/people/"+member._id}
                   alt=""

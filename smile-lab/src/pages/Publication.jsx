@@ -1,9 +1,11 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { Component } from "react";
 import Title from "../partials/Title";
 import ReactLoader from "../partials/Loading";
 import CardInfo from "../partials/Cards";
 import axios from "axios";
 import {link} from "react-router-dom";
+import Addpubbut from "../partials/addpubs"; 
+
 
   class Publication extends Component {
     constructor(props) {
@@ -13,8 +15,6 @@ import {link} from "react-router-dom";
         publications: [],
         DataisLoaded: false
       };
-
-      
     }
 
     componentDidMount() {
@@ -32,13 +32,18 @@ import {link} from "react-router-dom";
 
     render () 
     {
-      const {DataisLoaded, publications} = this.state;
+      const {DataisLoaded, publications} = this.state; 
       if(!DataisLoaded) return <div><h1>Data Loading..</h1></div>;
       return (
         <React.Fragment>
           <div className="container-fluid my-5 px-5 page-fade">
-            <Title title="Publications">
-            </Title>
+            <div>
+              <Addpubbut />
+            </div>
+              <br>
+              </br>
+            <Title title="Publications"></Title>
+            <Title title="Publication Highlights"></Title>
             {!DataisLoaded ? (
               <ReactLoader content="Loading Publications" />
             ) : (
