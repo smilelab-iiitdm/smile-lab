@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Carousel from "../partials/Carousel";
-import CardInfo from "../partials/Cards";
+import CardInfo from "../partials/CardsHome";
 import Title from "../partials/Title";
 import { NavLink } from "react-router-dom";
 import {publications} from "../assets/publicationsinfo/publicationinfo";

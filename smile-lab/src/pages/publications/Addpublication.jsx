@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import Title from "../partials/Title";
+import Title from "../../partials/Title";
 
 const Pubs = () =>{
     const [values,setValues] = useState({
@@ -47,7 +47,7 @@ const Pubs = () =>{
 const handleSubmit = e => {
     e.preventDefault();
 
-    const response = performPostHttpRequest('http://localhost:5000/publications/add',values);
+    const response = performPostHttpRequest('http://localhost:5000/api/publications/add',values);
       console.log(response);
   
       if(response)
@@ -59,7 +59,7 @@ const handleSubmit = e => {
 
       return (
         <React.Fragment>
-            <div>
+            <div className="container-fluid my-5 px-5 page-fade">
               <Title title="Add Publication"></Title>
             <form id="AddPubs" onSubmit={handleSubmit}>
               <div class="form-group">

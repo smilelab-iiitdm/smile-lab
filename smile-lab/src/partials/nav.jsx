@@ -1,50 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import Logo from "../assets/logo/dark.png";
+import "../styles/nav.css";
 
-function Navbar() {
-
-  const [links,setLinks] = useState([
-    {
-            name: "Research",
-            to: "/research",
-            drop: [],
-          },
-          {
-            name: "Publication",
-            to: "/publication",
-            drop: [],
-          },
-          {
-            name: "Facility",
-            to: "/facility",
-            drop: [],
-          },
-          {
-            name: "Members",
-            to: "/",
-            drop: [{
-              "name":"Phd Students",
-              "link":"/phdstudents"
-            },
-            {
-              "name":"Professors",
-              "link":"/professor"
-            },
-          ],
-          },
-          {
-            name: "Cultural activity",
-            to: "/culturalactivity",
-            drop: [],
-          },
-  ]);
-  
+function Navbar() { 
 return (
     <React.Fragment>
         <nav class="navbar navbar-expand-md bg-light navbar-light shadow-sm flex-column">
         <div className="navbar-brand w-100 d-flex align-items-center justify-content-between">
             <a class="navbar-brand" href="/"> 
-                <img src={Logo} alt="" height="100px" />
+                <img src={Logo} alt="" height="100px"/>
             </a>
             <a href="/login">
             <button class="btn btn-primary my-2 my-sm-0">login</button></a>
@@ -60,34 +24,49 @@ return (
       <li class="nav-item active">
         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
-      {links.map((link, index) => (
-          <div key={index+1}>
-           {link.drop.length === 0 ?
-            
-            <li class="nav-item" >
-            <a class="nav-link"  href={link.to}>{link.name}</a>
-        </li>
-        :
-        <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href={link.to} id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          {link.name}
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Research
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="/professor">Professors</a>
-          <a class="dropdown-item" href="/phd">Phd Students</a>
-          <a class="dropdown-item" href="/masters">Masters Students</a>
-          <a class="dropdown-item" href="/bachelors">Bachelor Students</a>
-          <a class="dropdown-item" href="/interns">Interns</a>
+          <a class="dropdown-item" href="/Research/topics">Topics</a>
+          <a class="dropdown-item" href="/Research/projects">Projects</a>
+          <a class="dropdown-item" href="/Research/news">News and Awards</a>
         </div>
       </li>
-      }
-          
-          </div>
-           ))}
-    </ul>
-  </div>
-  
-</nav>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Publication
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/Publications/highlights">Publication Highlights</a>
+          <a class="dropdown-item" href="/Publications/journals">Journals</a>
+          <a class="dropdown-item" href="/Publications/conference">Conference</a>
+          <a class="dropdown-item" href="/Publications/patents">Patents</a>
+          <a class="dropdown-item" href="/Publications/new">Add Publication</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/facility">Facility</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="/" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Members
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/Members/professor">Professors</a>
+          <a class="dropdown-item" href="/Members/phd">Phd Students</a>
+          <a class="dropdown-item" href="/Members/masters">Masters Students</a>
+          <a class="dropdown-item" href="/Members/bachelors">Bachelor Students</a>
+          <a class="dropdown-item" href="/Members/interns">Interns</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/culturalactivity">Cultural Activity</a>
+      </li>
+      </ul>
+      </div>
+      </nav>
     </React.Fragment>
   )
 }

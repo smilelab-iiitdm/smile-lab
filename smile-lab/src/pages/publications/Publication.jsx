@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import Title from "../partials/Title";
-import ReactLoader from "../partials/Loading";
-import CardInfo from "../partials/Cards";
+import Title from "../../partials/Title";
+import ReactLoader from "../../partials/Loading";
+import CardInfo from "../../partials/Cards";
 import axios from "axios";
 import {link} from "react-router-dom";
-import Addpubbut from "../partials/addpubs"; 
+import Addpubbut from "../../partials/addpubs"; 
 
 
   class Publication extends Component {
@@ -19,7 +19,7 @@ import Addpubbut from "../partials/addpubs";
 
     componentDidMount() {
       // axios.get('http://localhost:5000/publications/')
-      fetch("http://localhost:5000/publications/")
+      fetch("http://localhost:5000/api/publications/")
         .then((response) => response.json())
         .then((json) => {
           this.setState({
@@ -42,7 +42,7 @@ import Addpubbut from "../partials/addpubs";
             </div>
               <br>
               </br>
-            <Title title="Publications"></Title>
+            {/* <Title title="Publications"></Title> */}
             <Title title="Publication Highlights"></Title>
             {!DataisLoaded ? (
               <ReactLoader content="Loading Publications" />

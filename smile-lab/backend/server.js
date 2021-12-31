@@ -29,13 +29,13 @@ const internsRouter = require("./routes/interns");
 const phdRouter = require("./routes/phds");
 const usersRouter = require("./routes/users");
 
-app.use('/publications',publicationsRouter);
-app.use('/professors',professorsRouter);
-app.use('/undergraduates',ugRouter);
-app.use('/masters',mastersRouter);
-app.use('/interns',internsRouter);
-app.use('/phds',phdRouter);
-app.use('/users',usersRouter);
+app.use('/api/publications',publicationsRouter);
+app.use('/api/members/professors',professorsRouter);
+app.use('/api/members/undergraduates',ugRouter);
+app.use('/api/members/masters',mastersRouter);
+app.use('/api/members/interns',internsRouter);
+app.use('/api/members/phds',phdRouter);
+app.use('/api/users',usersRouter);
 
 app.listen(port,()=>{
     console.log('Successful running on : %d' ,port);
