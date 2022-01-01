@@ -47,7 +47,7 @@ const Pubs = () =>{
 const handleSubmit = e => {
     e.preventDefault();
 
-    const response = performPostHttpRequest('http://localhost:5000/api/publications/add',values);
+    const response = performPostHttpRequest('/api/publications/add',values);
       console.log(response);
   
       if(response)

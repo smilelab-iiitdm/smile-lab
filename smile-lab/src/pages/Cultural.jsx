@@ -26,7 +26,6 @@ const Cultural = () => {
                 <div className="card-body">
                   <div className="card-img-top mx-auto">
                     <img
-                      // src={`${link}/common/cultural/${cultural._id}`}
                       src=""
                       alt=""
                       loading="eager"

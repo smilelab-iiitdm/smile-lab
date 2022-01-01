@@ -1,9 +1,6 @@
-import React,{ useState } from "react";
-import ReactLoader from "../partials/Loading";
-import Title from "../partials/Title";
+import React from "react";
 
 const CardInfo = ({content}) =>{
-  const [isLoading,setLoading]=useState(false);
 
   return(
     <React.Fragment>

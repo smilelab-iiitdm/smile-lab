@@ -8,7 +8,7 @@ const Intern = () => {
     const [DataisLoaded,setDataLoaded] = useState(false);
 
     useEffect(() =>{
-        const url = "http://localhost:5000/api/members/interns/";
+        const url = "/api/members/interns/";
 
         const fetchCon = async() => {
             try{

@@ -19,7 +19,6 @@ const Facility = () => {
                 <div className="card-body">
                   <div className="card-img-top mx-auto">
                     <img
-                      // src={`${link}/common/facility/${facilty._id}`}
                       src=""
                       alt=""
                       loading="eager"

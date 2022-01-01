@@ -10,7 +10,7 @@ const Journals = () => {
     const [DataisLoaded,setDataLoaded] = useState(false);
 
     useEffect(() =>{
-        const url = "http://localhost:5000/api/publications";
+        const url = "/api/publications";
 
         const fetchCon = async() => {
             try{

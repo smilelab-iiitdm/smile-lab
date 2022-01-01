@@ -1,4 +1,4 @@
-import React, { useState,useEffect,Component } from "react";
+import React, { useState,useEffect} from "react";
 import Title from "../../partials/Title";
 import ReactLoader from "../../partials/Loading"; 
 
@@ -7,7 +7,7 @@ const ProMember = () => {
     const [DataisLoaded,setDataLoaded] = useState(false);
 
     useEffect(() =>{
-        const url = "http://localhost:5000/api/members/professors/";
+        const url = "/api/members/professors/";
 
         const fetchCon = async() => {
             try{

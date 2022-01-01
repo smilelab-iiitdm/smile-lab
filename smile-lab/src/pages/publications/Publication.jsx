@@ -18,8 +18,7 @@ import Addpubbut from "../../partials/addpubs";
     }
 
     componentDidMount() {
-      // axios.get('http://localhost:5000/publications/')
-      fetch("http://localhost:5000/api/publications/")
+      fetch("/api/publications/")
         .then((response) => response.json())
         .then((json) => {
           this.setState({
