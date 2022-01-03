@@ -3,10 +3,26 @@ import Carousel from "../partials/Carousel";
 import CardInfo from "../partials/CardsHome";
 import Title from "../partials/Title";
 import { NavLink } from "react-router-dom";
-import {publications} from "../assets/publicationsinfo/publicationinfo";
 
 const HomePage = () => {
   const [about, setAbout] = useState("");
+  const [publications,setPublications] = useState([]);
+
+  useEffect(() =>{
+    const url = "/api/publications";
+
+    const fetchCon = async() => {
+        try{
+            const response = await fetch(url);
+            const json = await response.json();
+            setPublications(json);
+        }catch(err) {
+            console.log(err)
+        }
+    };
+
+    fetchCon();
+},[]);
 
   return (
     <React.Fragment>

@@ -5,13 +5,12 @@ const jwt = require("jsonwebtoken");
 const router = require('express').Router();
 let users = require("../models/users.model");
 
-
-
-router.route('/').get((req,res) => {
-users.find()
-    .then(user => res.json(user))
-    .catch(err => res.status(400).json('Error: '+err));
-});
+//Route to get user data
+// router.route('/').get((req,res) => {
+// users.find()
+//     .then(user => res.json(user))
+//     .catch(err => res.status(400).json('Error: '+err));
+// });
 
 router.post('/register',async (req,res) => {
     const {username, password} = req.body;

@@ -1,7 +1,7 @@
 import React,{useContext,useState} from 'react';
 import {useHistory} from "react-router-dom";
 import {UserContext} from "../App";
-// import "./login.css";
+import "../styles/login.css";
 
 
 const Login = () =>{
@@ -34,18 +34,18 @@ const Login = () =>{
 
     return(
         <React.Fragment>
-            <div className="container-sm my-5  page-fade">
+            <div className="container-fluid my-5  page-fade">
         <h1>Login</h1>
         <div>
         <div class="formdiv">
         <form method="POST">
-  <div class="form-group col-md-6">
+  <div class="form-group col-md-10">
     <label for="username" class="col-sm-2 col-form-label">Email</label>
     <div class="col-sm">
       <input type="text" class="form-control" id="username" placeholder="username" name="username" value={username} onChange={(e) => setUsername(e.target.value)}></input>
     </div>
   </div>
-  <div class="form-group col-md-6">
+  <div class="form-group col-md-10">
     <label for="password" class="col-sm-2 col-form-label">Password</label>
     <div class="col-sm">
       <input type="password" class="form-control" id="password" placeholder="Password" name="password" value={password} onChange={(e) =>setPassword(e.target.value)}></input>
@@ -53,7 +53,7 @@ const Login = () =>{
   </div>
   <div class="form-group row">
     <div class="col-sm-10">
-      <button type="submit" class="btn btn-primary" onClick={userLogin}>Log in</button>
+      <button type="submit" class="btn btn-primary" id ="formsub" onClick={userLogin}>Log in</button>
     </div>
   </div>
         </form>
