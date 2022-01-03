@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import Logo from "../assets/logo/dark.png";
 import "../styles/nav.css";
+import {UserContext} from "../App";
 
-function Navbar() { 
+
+function Navbar() {
+  const {state,dispatch} = useContext(UserContext); 
 return (
     <React.Fragment>
         <nav class="navbar navbar-expand-md bg-light navbar-light shadow-sm flex-column">
@@ -10,11 +13,15 @@ return (
             <a class="navbar-brand" href="/"> 
                 <img src={Logo} alt="" height="100px"/>
             </a>
+            { !state ? 
             <a href="/login">
-            <button class="btn btn-primary my-2 my-sm-0">login</button></a>
-
+            <button class="btn btn-primary my-2 my-sm-0">login</button></a> 
+            :  
             <a href="/logout">
-            <button class="btn btn-primary my-2 my-sm-0">logout</button></a>
+            <button class="btn btn-primary my-2 my-sm-0">logout</button></a>}
+            
+
+            
         </div>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,8 +53,12 @@ return (
           <a class="dropdown-item" href="/Publications/journals">Journals</a>
           <a class="dropdown-item" href="/Publications/conference">Conference</a>
           <a class="dropdown-item" href="/Publications/patents">Patents</a>
+          { state ?
           <a class="dropdown-item" href="/Publications/new">Add Publication</a>
-        </div>
+            :
+          ""
+          }
+          </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/facility">Facility</a>

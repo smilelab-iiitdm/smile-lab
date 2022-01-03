@@ -35,8 +35,10 @@ import Logout from "./pages/Logout";
 
 import "./styles/style.css";
 
+//A context to test for user
 export const UserContext = createContext();
 
+//Reducer Function
 const initialState = false;
 const reducer = (state,action) =>{
   if(action.type ==="USER") {

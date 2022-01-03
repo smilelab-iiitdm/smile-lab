@@ -1,23 +1,9 @@
 import React,{useContext,useState} from 'react';
 import {useHistory} from "react-router-dom";
-// import "./login.css";
 import {UserContext} from "../App";
+// import "./login.css";
 
 
-// function isuser(user,dispatch) {
-//   if(user){
-//     dispatch({type:"USER",payload:true})
-//     console.log("This is perfect")
-//   }
-//   else{
-//     dispatch({type:"USER",payload:false})
-//     console.log("This is also ok");
-//   }
-// }
-
-// function iamgood(state){
-//   console.log(state)
-// }
 const Login = () =>{
   const {state, dispatch} = useContext(UserContext);
   const history = useHistory() 
@@ -40,14 +26,14 @@ const Login = () =>{
       const data = res.json();
       if(res.status ===400 || !data){ 
         window.alert("Login Unsuccessful")}
-      else{ window.alert("Login Successful")
+      else{ 
+        dispatch({type:"USER",payload:true});
+        window.alert("Login Successful");
     history.push('/');};
     }
 
     return(
         <React.Fragment>
-          {/* {isuser(user,dispatch)}
-          {iamgood(state)} */}
             <div className="container-sm my-5  page-fade">
         <h1>Login</h1>
         <div>
