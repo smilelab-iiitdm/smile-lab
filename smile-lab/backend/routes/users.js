@@ -33,10 +33,8 @@ router.post('/register',async (req,res) => {
             password
         });
 
-        await addUser.save();
-            // .then(() => 
+        await addUser.save(); 
             res.status(200).json({message: 'Added User'})
-            // .catch(err => res.status(400).json('Error: '+ err));
     }
     catch (err) {
         console.log(err);
@@ -45,7 +43,7 @@ router.post('/register',async (req,res) => {
 
 router.post('/login',async (req,res) => {
     try{
-        let token,hashed;
+        let token;
         const {username,password} = req.body;
 
         if(!username || !password){
@@ -56,16 +54,11 @@ router.post('/login',async (req,res) => {
 
         if(userLogin)
         {
-            console.log("I am called")
-            // const isMatch = await bcrypt.compare(password,userLogin.password)
-            const isMatch = password===userLogin.password
+            const isMatch = await bcrypt.compareSync(password,userLogin.password)
 
             token = await userLogin.generateAuthToken();
-            console.log(token)
 
-            res.cookie("jstoken",token,{
-                httpOnly: true
-            });
+            res.cookie('WebToken',token,{expires: new Date(Date.now()+258952000000), httpOnly: true })
 
             if(!isMatch) {
                 res.status(400).json({error:'Wrong Credentials'});
@@ -81,6 +74,12 @@ router.post('/login',async (req,res) => {
     } catch(err) {
         console.log(err);
     }
+})
+
+router.get('/logout', (req,res) => {
+    console.log("Successful Logout");
+    res.clearCookie('WebToken',{path: '/'});
+    res.status(200).send("User Successfully Logged Out");
 })
 
 

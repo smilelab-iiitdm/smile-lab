@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+const cookieparser = require("cookie-parser");
 
 require('dotenv').config();
 
@@ -9,6 +10,7 @@ const port=process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
+app.use(cookieparser());
 
 // const ATLAS_URI = "ATLAS_URI = mongodb+srv://iamroot:inmBBK65@cluster0.9kg18.mongodb.net/myFirstDatabase?retryWrites=true";
 

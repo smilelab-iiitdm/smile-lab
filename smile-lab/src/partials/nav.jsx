@@ -12,6 +12,9 @@ return (
             </a>
             <a href="/login">
             <button class="btn btn-primary my-2 my-sm-0">login</button></a>
+
+            <a href="/logout">
+            <button class="btn btn-primary my-2 my-sm-0">logout</button></a>
         </div>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

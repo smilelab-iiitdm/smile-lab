@@ -29,7 +29,10 @@ import Footer from "./partials/Footer";
 
 import Cultural from "./pages/Cultural";
 
+//Login and Logout pages
 import Login from "./pages/Login";
+import Logout from "./pages/Logout";
+
 import "./styles/style.css";
 
 export const UserContext = createContext();
@@ -82,7 +85,10 @@ const App = () => {
           <Route path="/facility" exact component={Facility} />
           <Route path="/culturalactivity" exact component={Cultural} />
           
+          {/* Login and Logout related pages */}
           <Route path="/login" exact component = {Login} />
+          <Route path="/logout" exact component = {Logout} />
+
         </Switch>
         <Footer />
       </BrowserRouter>
