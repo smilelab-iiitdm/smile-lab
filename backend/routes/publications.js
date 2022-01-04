@@ -26,7 +26,7 @@ router.route('/add').post((req,res) =>{
         pages,
         year,
         doi,
-        authors,
+        authors
     });
 
     addPublication.save()

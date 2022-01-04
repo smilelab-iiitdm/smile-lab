@@ -3,7 +3,12 @@ import Title from "../../partials/Title";
 import ReactLoader from "../../partials/Loading";
 import CardInfo from "../../partials/Cards";
 // import Addpubbut from "../../partials/addpubs"; 
-const conference = [];
+let conference = [];
+
+
+function popper() {
+    conference = [...new Map(conference.map((item)=>[item["_id"],item])).values()];
+}
 
 const Conference = () => {
     const [conferences,setConferences] = useState([]);
@@ -29,7 +34,7 @@ const Conference = () => {
 
     const divisor = (publication) => {
         if(publication.category === "conference"){
-          conference.push(publication);
+          conference.unshift(publication);
         }
       }
 
@@ -47,7 +52,16 @@ const Conference = () => {
             </div>
           ))  
         )}
+        {popper()}
+        {conference.length?
         <CardInfo content={conference} />
+        :
+        <div>
+        <br></br>
+        <h1>No Conferences Found</h1>
+        <br></br>
+        </div> 
+        }
         </div>
         </div>
         </React.Fragment>

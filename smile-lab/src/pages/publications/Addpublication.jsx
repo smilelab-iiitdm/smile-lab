@@ -64,11 +64,11 @@ const handleSubmit = e => {
             <form id="AddPubs" onSubmit={handleSubmit}>
               <div class="form-group">
                 <label for="title">Title</label>
-                <input type="text" class="form-control" id="title" name="title" placeholder="Publication Title" value={values.title} onChange={handleChange}></input>
+                <input type="text" class="form-control" id="title" name="title" placeholder="Publication Title" value={values.title} onChange={handleChange} required></input>
                 </div>
                 <div class="form-group">
                 <label for="authors">Authors</label>
-                <input type="text" class="form-control" id="authors" name="authors" placeholder="Publication Authors" value={values.authors} onChange={handleChange}></input>
+                <input type="text" class="form-control" id="authors" name="authors" placeholder="Publication Authors" value={values.authors} onChange={handleChange} required></input>
                 </div>
                 <div class="form-row">
                   <div class="form-group col-md-6">
@@ -77,21 +77,21 @@ const handleSubmit = e => {
                   </div>
                   <div class="form-group col-md-6">
                     <label for="category">Category</label>
-                    <input type="text" class="form-control" id="category" name="category" value={values.category} onChange={handleChange}></input>
+                    <input type="text" class="form-control" id="category" name="category" value={values.category} onChange={handleChange} required></input>
                   </div>
                 </div>
                 <div class="form-row">
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-3">
                 <label for="volume">Volume</label>
                 <input type="text" class="form-control" id="volume" name="volume" value={values.vloume} onChange={handleChange}></input>
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-3">
                 <label for="pages">Pages</label>
                 <input type="text" class="form-control"  id="pages" name="pages" value={values.pages} onChange={handleChange}></input>
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-3">
                 <label for="year">Year</label>
-                <input type="text" class="form-control"  id="year" name="year" value={values.year} onChange={handleChange}></input>
+                <input type="text" class="form-control"  id="year" name="year" value={values.year} onChange={handleChange} required></input>
                 </div>
               </div>
               <div class="form-group">

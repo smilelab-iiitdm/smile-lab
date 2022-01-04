@@ -3,7 +3,12 @@ import Title from "../../partials/Title";
 import ReactLoader from "../../partials/Loading";
 import CardInfo from "../../partials/Cards";
 // import Addpubbut from "../../partials/addpubs"; 
-const highlight = [];
+let highlight = [];
+
+
+function popper() {
+    highlight = [...new Map(highlight.map((item)=>[item["_id"],item])).values()];
+}
 
 const Highlights = () => {
     const [highlights,setHighlights] = useState([]);
@@ -28,8 +33,8 @@ const Highlights = () => {
     },[]);
 
     const divisor = (publication) => {
-        if(publication.year==="2021"){
-          highlight.push(publication);
+        if(publication.year ==="2021"){
+          highlight.unshift(publication);
         }
       }
 
@@ -47,6 +52,7 @@ const Highlights = () => {
             </div>
           ))  
         )}
+        {popper()}
         <CardInfo content={highlight} />
         </div>
         </div>

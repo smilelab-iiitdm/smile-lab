@@ -42,7 +42,7 @@ const ProMember = () => {
                       />
                     </div>
                     <div className="col-sm-6 d-flex justify-content-between flex-column">
-                      <h1 className="mb-4">{member.name}</h1>
+                      <h2>{member.name}</h2>
                       <p>
                         <b>Role: {"    "}</b>
                         {member.desc}

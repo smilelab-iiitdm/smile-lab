@@ -36,7 +36,6 @@ const PublicationSchema = new Schema(
             type: String,
             trim: true
         },
-
         
     },
     {

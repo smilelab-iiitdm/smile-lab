@@ -3,7 +3,11 @@ import Title from "../../partials/Title";
 import ReactLoader from "../../partials/Loading";
 import CardInfo from "../../partials/Cards";
 // import Addpubbut from "../../partials/addpubs"; 
-const patent = [];
+let patent = [];
+
+function popper() {
+    patent = [...new Map(patent.map((item)=>[item["_id"],item])).values()];
+}
 
 const Patents = () => {
     const [patents,setPatents] = useState([]);
@@ -29,7 +33,7 @@ const Patents = () => {
 
     const divisor = (publication) => {
         if(publication.category === "patent"){
-          patent.push(publication);
+          patent.unshift(publication);
         }
       }
 
@@ -47,7 +51,16 @@ const Patents = () => {
             </div>
           ))  
         )}
+        {popper()}
+        {patent.length?
         <CardInfo content={patent} />
+        :
+        <div>
+        <br></br>
+        <h1>No Patents Found</h1>
+        <br></br>
+        </div>
+        }
         </div>
         </div>
         </React.Fragment>

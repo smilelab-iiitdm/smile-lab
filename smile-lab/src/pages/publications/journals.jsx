@@ -3,7 +3,12 @@ import Title from "../../partials/Title";
 import ReactLoader from "../../partials/Loading";
 import CardInfo from "../../partials/Cards";
 // import Addpubbut from "../../partials/addpubs"; 
-const journal = [];
+
+let journal=[];
+
+function popper() {
+    journal = [...new Map(journal.map((item)=>[item["_id"],item])).values()];
+}
 
 const Journals = () => {
     const [journals,setJournals] = useState([]);
@@ -29,7 +34,7 @@ const Journals = () => {
 
     const divisor = (publication) => {
         if(publication.category === "journal"){
-          journal.push(publication);
+          journal.unshift(publication);
         }
       }
 
@@ -47,7 +52,19 @@ const Journals = () => {
             </div>
           ))  
         )}
+        {/* {console.log(journal)} */}
+        {popper()}
+
+        {journal.length?
         <CardInfo content={journal} />
+        :
+        <div>
+        <br></br>
+        <h1>No Journals Found</h1>
+        <br></br>
+        </div>
+        }
+        {/* {popper} */}
         </div>
         </div>
         </React.Fragment>

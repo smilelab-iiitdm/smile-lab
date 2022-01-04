@@ -30,6 +30,7 @@ const mastersRouter = require("./routes/masters");
 const internsRouter = require("./routes/interns");
 const phdRouter = require("./routes/phds");
 const usersRouter = require("./routes/users");
+const contactsRouter = require("./routes/contacts");
 
 app.use('/api/publications',publicationsRouter);
 app.use('/api/members/professors',professorsRouter);
@@ -38,6 +39,7 @@ app.use('/api/members/masters',mastersRouter);
 app.use('/api/members/interns',internsRouter);
 app.use('/api/members/phds',phdRouter);
 app.use('/api/users',usersRouter);
+app.use('/api/contacts',contactsRouter);
 
 app.listen(port,()=>{
     console.log('Successful running on : %d' ,port);
