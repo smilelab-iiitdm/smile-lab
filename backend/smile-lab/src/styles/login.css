@@ -1,0 +1,28 @@
+h1{
+    font-size: 45px;
+    padding-left: 48%;
+    
+}
+
+.form-group.col-md-10{
+    padding-top: 10px;
+    padding-left: 20%;
+}
+
+.formdiv{
+    border-style: none;
+    margin-left: auto;
+    margin-right: auto;
+    width:40%;
+    margin-top: 20px;
+    border-style: solid;
+    border-radius: 15px;
+    box-shadow:0 3px 5px 3px rgba(0, 0, 0, 0.2);
+    border-color: white;
+}
+
+.form-group.row{
+    margin-top: 25px;
+    padding-bottom: 15px;
+    padding-left: 75%;
+}
