@@ -1,0 +1,20 @@
+$color: #2b00ff;
+
+.bg-dark {
+  background-color: rgb(21, 21, 21) !important;
+}
+
+.bg-light {
+  background-color: white !important;
+}
+
+.text-primary {
+  color: $color !important;
+}
+
+.border-primary {
+  border-color: $color !important;
+}
+.border-left {
+  border-left-width: 2px !important;
+}
